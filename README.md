@@ -1,5 +1,5 @@
 # flask-website
-A website using Flask with a database implemented.
+A website using Flask and Flask security with a database implemented.
 
 To do: 
   Finish the autoemail when there's is a package.
