@@ -1,0 +1,32 @@
+<head>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/teste.css') }}"> 
+</head>
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+{% include "security/_messages.html" %}
+<div class="forms-register">
+  <h1>{{ ('Register') }}</h1>
+  <form action="{{ url_for_security('register') }}" method="POST" name="register_user_form">
+    {{ register_user_form.hidden_tag() }}
+    {{ render_field_with_errors(register_user_form.email,placeholder="Email") }}
+    {{ render_field_with_errors(register_user_form.name,placeholder="Nome Completo") }}
+    {{ render_field_with_errors(register_user_form.password,placeholder="Password") }}
+    {% if register_user_form.password_confirm %}
+      {{ render_field_with_errors(register_user_form.password_confirm,placeholder="Retype password") }}
+    {% endif %}
+    {{ render_field_with_errors(register_user_form.morada,placeholder="Morada") }}
+    {{ render_field(register_user_form.submit) }}
+  </form>
+  
+  {% if security.registerable or security.recoverable or security.confirmable %}
+    <ul>
+      <li><a href="{{ url_for_security('login') }}{% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}">{{ _('Login') }}</a></li>
+      {% if security.recoverable %}
+        <li><a href="{{ url_for_security('forgot_password') }}">{{ _('Forgot password') }}</a><br/></li>
+      {% endif %}
+      {% if security.confirmable %}
+        <li><a href="{{ url_for_security('send_confirmation') }}">{{ _('Confirm account') }}</a></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+</div>
+

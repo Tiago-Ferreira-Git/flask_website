@@ -1,0 +1,22 @@
+<head>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/teste.css') }}"> 
+</head>
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+{% include "security/_messages.html" %}
+<div class="forms">
+  <h1>{{ _('Login') }}</h1>
+  <form action="{{ url_for('login') }}" method="POST" name="login_user_form">
+    {{ login_user_form.hidden_tag() }}
+    {{ render_field_with_errors(login_user_form.email, placeholder="Email") }}
+    {{ render_field_with_errors(login_user_form.password, placeholder="Password") }}
+    {{ render_field_with_errors(login_user_form.remember) }}
+    {{ render_field(login_user_form.next) }}
+    {{ render_field(login_user_form.submit) }}
+  </form>
+  <a href="{{ url_for_security('forgot_password') }}">{{ _('Forgot password') }}</a>
+  <a href="{{ url_for_security('register') }}{% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}">{{ _('Register') }}</a>
+  
+  
+
+</div>
+

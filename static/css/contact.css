@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #f3f3f3;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.container{
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+p{
+    line-height: 1.5rem;
+}
+
+#navbar{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+} 
+
+#navbar h1 a{
+    color:black;
+    text-decoration: none;
+}
+
+#navbar h1 a:hover{
+    color:black;
+}
+
+#navbar h1 a:visited{
+    color:black;
+}
+
+#navbar h1 a:active{
+    color:black;
+}
+#navbar ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar ul i{
+    color:#7ab436;
+    padding: 0rem 0.4rem;
+}
+.btn{
+    display: inline-block;
+    background-color: #7ab436;
+    border-radius: 5px;
+    color: white;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border: none;
+}
+.now{
+    background-color: #79b436d3;
+}
+
+
+#navbar >ul > li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.box{
+    position: absolute;
+    width: 282px;
+    font-size: 14px;
+    margin-top: 9rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 16px 16px;
+    color: grey;
+    border: 1.5px solid #7ab436;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    transform: scale(0);
+    transform-origin: top center;
+    transition: all 300ms ease-in-out;
+    text-align: center;
+    
+
+}
+.box a{
+    color: rgba(128, 128, 128, 0.8);
+}
+.box a:hover{
+    color: rgba(128, 128, 128, 1);
+}
+.box:after {
+    content: " ";
+    position: absolute;
+    right: 45%;
+    top: -15px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #7ab436;
+}
+  
+#navbar >ul > li:hover .box{
+    transform: scale(1);
+}
+
+.boxcontainer {
+    padding: 1rem;
+    margin: 1rem;
+    color: white;
+    /* offset-x | offset-y | color */
+    /*box-shadow: 10px 10px teal;
+    /* offset-x | offset-y | blur-radius | color */
+    /*box-shadow: 5px 5px 20px teal;
+    /* Negative values */
+    /*box-shadow: -5px -5px 20px teal;*/
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);
+    /* inset | offset-x | offset-y | color */
+    /*box-shadow: inset -3px -3px teal;
+    /* Multiple shadows */
+    /*box-shadow: 3px 3px teal, -3px -3px olive;*/
+}
+.boxcontainer p{
+    color :#7ab436;
+}
+
+#main > div > div #imagem img{
+    width: 100%;
+    height: 90.3%;
+    margin-top: 1.2rem;
+}
+#main > div > div{
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+
+#main > div h1{
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  #imagem{
+      position: relative;
+}
+
+#index2 h2{
+    text-align: center;
+    padding: 2rem 0;
+}
+#index2 > div {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+  }
+  #colored{
+      background-color: #7ab436;
+  }
+  #colored p{
+    color: white;
+  }
